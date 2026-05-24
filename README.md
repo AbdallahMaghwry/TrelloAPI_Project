@@ -69,7 +69,8 @@ The collection is organized into multiple folders, each targeting a different te
 | Folder | Description |
 |--------|-------------|
 | `End-to-End Workflow` | Full CRUD operations across Boards, Lists, Cards, and Checklists |
-
+| `Move List for Another Board Test` | Validates moving a List from one Board to another and verifies state after the move |
+| `Move Card to Another List` | Validates moving Cards between two Lists within the same Board |
 
 >  Each folder is self-contained and can be run independently via the Collection Runner.
 
@@ -108,6 +109,41 @@ The collection is organized into multiple folders, each targeting a different te
 | Get Checklist | `GET` | Retrieves checklist details and validates structure |
 | Update Checklist | `PUT` | Updates checklist name and verifies the change |
 | Delete Checklist | `DELETE` | Deletes the checklist and verifies HTTP 200 response |
+
+---
+
+###  Move List for another Board Test
+
+| Request | Method | Description |
+|---------|--------|-------------|
+| Create First Board | `POST` | Creates the source board |
+| Get Board After Create First Board | `GET` | Validates the first board was created correctly |
+| Create Second Board | `POST` | Creates the destination board |
+| Get Board After Create Second Board | `GET` | Validates the second board was created correctly |
+| Create List in First Board | `POST` | Creates a list inside the first board |
+| Get List First Board | `GET` | Validates the list exists in the first board |
+| Create New Card In First Board | `POST` | Creates a card inside the list |
+| Get Card in First Board | `GET` | Validates the card exists before the move |
+| Move List to Second Board | `PUT` | Moves the list to the second board |
+| Get Lists from Second Board | `GET` | Validates the list now exists in the second board |
+| Delete First Board | `DELETE` | Cleans up the first board |
+| Delete Second Board | `DELETE` | Cleans up the second board |
+
+---
+
+###  Move Card to another List
+
+| Request | Method | Description |
+|---------|--------|-------------|
+| Create Board | `POST` | Creates a board to run the scenario on |
+| Get Board After Create | `GET` | Validates the board was created correctly |
+| Create First List | `POST` | Creates the source list |
+| Create Second List | `POST` | Creates the destination list |
+| Create First Card | `POST` | Creates the first card in the source list |
+| Create Second Card | `POST` | Creates the second card in the source list |
+| Move all Cards to Another List | `POST` | Moves all cards from the source list to the destination list |
+| Get All Cards in List | `GET` | Validates all cards now exist in the destination list |
+| Delete Board | `DELETE` | Cleans up the board after the scenario |
 
 ---
 
