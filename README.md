@@ -156,6 +156,19 @@ The collection is organized into multiple folders, each targeting a different te
 
 ---
 
+## 📊 Test Report
+
+View the latest test run results here:
+
+👉 [Open Test Report](https://abdallahmaghwry.github.io/TrelloAPI_Project/reports/Trello%20API%20%E2%80%93%20Test%20Report.html)
+
+- **47** requests executed
+- **1,428** assertions passed
+- **0** failures
+- **100%** pass rate
+
+---
+
 ##  How to Run
 
 1. Clone or download this repository
